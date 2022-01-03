@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:200,300,500&display=swap);
+    body,
+		html {
+			padding: 0;
+			margin: 0;
+			height: 100%;
+			font-family: 'Montserrat';
+			overflow: hidden;
+		}
+    .img-ui{
+        display: block;
+    }
+    .container-ui{
+        position: fixed;
+        z-index: 1000;
+        right: 0;
+        display: none;
+    }
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        right: 0;
+    }
+    .header img{
+        width: 60%;
+    }
+    .arrow{
+        position: fixed;
+        z-index: 1000;
+        top: 50%;  
+        display: none; 
+    }
+    .arrow-ui{
+        position: fixed;
+        top:50%;
+        width:12vw;
+    }
+    .arrow-ui img{ 
+        width:100%;
+    }
+    .arrow-left{
+        left:5vw;
+    }
+    .arrow-right{
+        right:5vw;
+    }
+
+    .footer{
+        position: fixed;
+        bottom: 5vh;
+        right: 0;
+        z-index: 1000;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        display: none;
+    }
+    .footer img{
+        width: 25vw;
+    }
+
+    .scan-container{
+        position: fixed;
+        left: 0;
+        top: 0;
+        min-width: 100%;
+        min-height: 100%;
+        color:white;
+    }
+
+    .scan-container h3{
+        font-size: 20px;
+    }
+
+    .scan-img{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40%;
+    }
+    
+    .scan-div-img{
+       text-align: center;
+    }
+
+    .scan-div-img img{
+        width:40vw;
+    }
+
+    .bg-color {
+        position: fixed;
+        top:0px;
+        left:0px;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        overflow: hidden;
+        opacity: 0.98;
+        background: white;
+        z-index:99999;
+    }
+        .loader-container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+            margin: 20px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            left: 0;
+            margin-top: 50%;
+        }
+        .label-loading{
+            padding: 20px;
+        }
+        .sbl-circ-ripple {
+            height: 48px;
+            width: 48px;
+            color: black;
+            border-radius: 50%;
+            position: relative;
+            display: inline-block; 
+        }
+        .sbl-circ-ripple::after, .sbl-circ-ripple::before {
+            content: '';
+            height: 0;
+            width: 0;
+            border: inherit;
+            border: 5px solid;
+            border-radius: inherit;
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            animation: circle-ripple  1s linear infinite; 
+        }
+        .sbl-circ-ripple::before {
+            animation-delay: -0.5s; 
+        }
+
+        @keyframes circle-ripple {
+            0% {
+                height: 0;
+                width: 0;
+                left: 20px;
+                top: 20px; 
+            }
+            100% {
+                height: 48px;
+                width: 48px;
+                left: -5px;
+                top: -5px;
+                opacity: 0; 
+            } 
+        }

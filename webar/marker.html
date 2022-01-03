@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>4D Showcase Cektrend Studio</title>
+    <meta name="description" content="Model Viewer (VR / AR) • A-Frame">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="./assets/css/marker/marker.css">
+    <script src="./assets/js/marker/aframe.min.js"></script>
+    <script src="./assets/js/marker/aframe-extras.min.js"></script>
+    <script src="./assets/js/marker/aframe-look-at-component.min.js"></script>
+    <script src="./assets/js/marker/aframe-ar.js"></script>
+    <script src="./assets/js/marker/gesture-detector.js"></script>
+    <script src="./assets/js/marker/hold-drag.js"></script>
+    <script src="./assets/js/marker/pinch-scale.js"></script>
+    <script src="./assets/js/marker/two-finger-spin.js"></script>
+    <script src="./assets/js/howler.core.min.js"></script>
+    <script src="./assets/js/marker/marker.min.js"></script>
+</head>
+
+<body>
+    <a-scene embedded arjs="debugUIEnabled: false" gesture-detector eventTouch loading-screen="enabled:false"
+        renderer="sortObjects: true;" light="defaultLightsEnabled: false" vr-mode-ui="enabled: false"">
+        <a-entity id=" lightAmbient" light="type: ambient; color: #CCC">
+        </a-entity>
+        <a-entity light="type: hemisphere; intensity: 1"></a-entity>
+        <a-marker markerhandler emitevents="true" preset="custom" type='pattern' url="./assets/pattern-2Logo Cektrend.patt">
+            <a-entity class="rotate-1" id="3d-model" two-finger-spin pinch-scale rotation="0 0 0" position="0 0 0"
+                scale="1 1 1"
+                gltf-model="./assets/3d/animal.glb"
+                modelhandler visible="false" data-model="animal" animation-mixer="clip:rig|01_zebra_idle|01_zebra_idle">
+            </a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+        <div class="container-ui">
+            <div class="header">
+                <img id="header-logo" src="./assets/images/animal-logo.png" class="img-ui" alt="">
+            </div>
+        </div>
+        <div class="arrow">
+            <div class="arrow-ui arrow-left">
+                <img src="./assets/icons/L.png" class="img-ui" alt="" onclick="changeShow('previous')">
+            </div>
+            <div class="arrow-ui arrow-right">
+                <img src="./assets/icons/R.png" class="img-ui" alt="" onclick="changeShow('next')">
+            </div>
+        </div>
+    </a-scene>
+    <div class="scan-container">
+        <div class="scan-img">
+            <div class="scan-div-img">
+                <img src="./assets/icons/scan.png" alt="">
+            </div>
+            <div class="label-scan">
+                <h3>Please Scan QrCode</h3>
+            </div>
+        </div>
+    </div>
+    <div class="bg-color">
+        <div class="loader-container">
+            <div class="sbl-circ-ripple">
+            </div>
+            <div class="label-loading">
+                Loading please wait...
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
